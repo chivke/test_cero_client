@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  client:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    image: test_cero_client_image
+    container_name: test_cero_client_image_container
+    volumes:
+      - .:/app:z
+    env_file:
+      - ./.env
+    command: /start_test
